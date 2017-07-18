@@ -54,7 +54,8 @@
 		<module>pigeon-monitor</module>
 		<module>pigeon-extensions</module>
 		<module>pigeon-build</module>
-	</modules>
+        <module>pigeon-demo</module>
+    </modules>
 
 	<description>pigeon-parent</description>
 	<developers>

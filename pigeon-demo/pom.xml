@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pigeon-parent</artifactId>
+        <groupId>com.dianping</groupId>
+        <version>2.9.12-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>pigeon-demo</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>pigeon-demo</name>
+
+    <properties>
+        <env>dev</env>
+        <argLine>-Dfile.encoding=UTF-8</argLine>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jersey.version>2.6</jersey.version>
+        <slf4j.version>1.7.12</slf4j.version>
+        <servlet-api.version>3.0.1</servlet-api.version>
+        <log4j2.version>2.3</log4j2.version>
+        <spring.version>3.2.9.RELEASE</spring.version>
+        <mybatis.version>3.2.4</mybatis.version>
+        <aspectj.version>1.7.4</aspectj.version>
+        <dp.lion.version>0.6.7</dp.lion.version>
+        <dp.cat.version>1.5.8</dp.cat.version>
+        <dp.tracker.version>2.2.5</dp.tracker.version>
+        <dp.pigeon.version>2.9.12-SNAPSHOT</dp.pigeon.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        
+        <!-- 公司依赖包start -->
+        <dependency>
+            <groupId>com.dianping.cat</groupId>
+            <artifactId>cat-client</artifactId>
+            <version>${dp.cat.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dianping.lion</groupId>
+            <artifactId>lion-client</artifactId>
+            <version>${dp.lion.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dianping</groupId>
+            <artifactId>avatar-tracker</artifactId>
+            <version>${dp.tracker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dianping.dpsf</groupId>
+            <artifactId>dpsf-net</artifactId>
+            <version>${dp.pigeon.version}</version>
+        </dependency>
+        <!-- 公司依赖包end -->
+    </dependencies>
+
+    <build>
+        <finalName>${artifactId}-${env}-${version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-compiler-javac</artifactId>
+                        <version>1.8.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
